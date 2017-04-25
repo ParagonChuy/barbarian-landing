@@ -1,0 +1,35 @@
+/*
+
+font-family: 'Cinzel', serif;
+font-family: 'Libre Baskerville', serif;
+
+*/
+
+html {
+  background: url('../img/bodybuilder-bg.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-item {
+  max-height: 100%;
+}
