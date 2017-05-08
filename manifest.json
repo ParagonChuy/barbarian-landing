@@ -1,0 +1,6 @@
+{
+  "name": "barbarian-landing",
+  "short_name": "barbarian-landing",
+  "start_url": "/",
+  "display": "standalone"
+}
