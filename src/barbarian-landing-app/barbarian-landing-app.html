@@ -1,4 +1,10 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="/src/barbarian-landing-app/hero-app.html">
+<link rel="import" href="/src/barbarian-landing-app/about-us.html">
+<link rel="import" href="/src/barbarian-landing-app/shop-app.html">
+<link rel="import" href="/src/barbarian-landing-app/contact-us.html">
+
+
 <!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">-->
 <!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">-->
 
@@ -9,21 +15,17 @@
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+    <!-- Elements go hee -->
+    <hero-app></hero-app>
+    <about-us></about-us>
+    <shop-app></shop-app>
+    <contact-us></contact-us>
   </template>
 
   <script>
     /** @polymerElement */
     class BarbarianLandingApp extends Polymer.Element {
       static get is() { return 'barbarian-landing-app'; }
-      static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: 'barbarian-landing-app'
-          }
-        };
-      }
     }
 
     window.customElements.define(BarbarianLandingApp.is, BarbarianLandingApp);

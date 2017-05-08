@@ -1,0 +1,23 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">-->
+<!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">-->
+
+<dom-module id="hero-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hero</h2>
+  </template>
+
+  <script>
+    /** @polymerElement */
+    class HeroApp extends Polymer.Element {
+      static get is() { return 'hero-app'; }
+    }
+
+    window.customElements.define(HeroApp.is, HeroApp);
+  </script>
+</dom-module>

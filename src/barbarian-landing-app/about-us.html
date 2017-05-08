@@ -1,0 +1,23 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">-->
+<!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">-->
+
+<dom-module id="about-us">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>About Us</h2>
+  </template>
+
+  <script>
+    /** @polymerElement */
+    class AboutUs extends Polymer.Element {
+      static get is() { return 'about-us'; }
+    }
+
+    window.customElements.define(AboutUs.is, AboutUs);
+  </script>
+</dom-module>

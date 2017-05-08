@@ -1,0 +1,23 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">-->
+<!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">-->
+
+<dom-module id="shop-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Shop</h2>
+  </template>
+
+  <script>
+    /** @polymerElement */
+    class ShopApp extends Polymer.Element {
+      static get is() { return 'shop-app'; }
+    }
+
+    window.customElements.define(ShopApp.is, ShopApp);
+  </script>
+</dom-module>
