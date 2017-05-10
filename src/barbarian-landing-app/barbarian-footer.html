@@ -2,29 +2,29 @@
 <!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">-->
 <!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">-->
 
-<dom-module id="contact-us">
+<dom-module id="barbarian-footer">
   <template>
     <style>
       :host {
         display: block;
       }
-      #contact {
-        background: #DCDCDC;
-        height: 100vh;
+      #footer {
+        background: #333333;
+        height: 20vh;
         width: 100vw;
       }
     </style>
-    <div id="contact">
-      Contact
+    <div id="footer">
+      Footer
     </div>
   </template>
 
   <script>
     /** @polymerElement */
-    class ContactUs extends Polymer.Element {
-      static get is() { return 'contact-us'; }
+    class BarbarianFooter extends Polymer.Element {
+      static get is() { return 'barbarian-footer'; }
     }
 
-    window.customElements.define(ContactUs.is, ContactUs);
+    window.customElements.define(BarbarianFooter.is, BarbarianFooter);
   </script>
 </dom-module>
