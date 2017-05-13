@@ -1,28 +1,172 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/app-grid/app-grid-style.html">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,7s00" rel="stylesheet">
+
 <!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">-->
 <!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">-->
 
 <dom-module id="hero-app">
   <template>
-    <style>
+    <style include="app-grid-style">
       :host {
         display: block;
       }
+      .app-grid {
+        --app-grid-columns: 2;
+        --app-grid-item-height: 100vh;
+        --app-grid-item-width: 50vw;
+      }
+      .logo-hero {
+        display: block;
+        height: 20vw;
+        max-height: 25vw;
+        margin: 0 auto;
+      }
+      .snap-code{
+        height: auto;
+        width: 40vw;
+      }
       #hero {
-        background: url("/assets/bodybuilder-bg.png") center;
+        color: white;
         height: 100vh;
         width: 100vw;
       }
+      .cta {
+        color: white;
+        font-size: 2.4vh;
+        font-family: 'Cinzel',serif;
+        text-align: center;
+      }
+      .grid-container {
+        display: flex;
+        justify-content: center;
+      }
+      .grid-item {
+        height: 5vh;
+        padding: 1vh;
+      }
+      .grid-item:hover {
+        background: rgba(176, 0, 0, 0.8);
+      }
+      .at {
+        display: inline;
+        font-family: sans-serif;
+        font-size: 2vh;
+      }
+      .left-hero {
+        background: url("../../assets/bg.png") center center;
+      }
+      .right-hero {
+        background: #333333;
+        padding: 3vmax;
+      }
+      .def {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.7em;
+        font-weight: 300;
+      }
+      .bold {
+        font-family: "Roboto", sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+      }
+      .center-content {
+        height: 100vh;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .ghost {
+        display: inline-block;
+        font-size: 1em;
+        width: 30vw;
+        padding: 8px;
+        border: 2px solid #fff;
+        text-align: center;
+        outline: none;
+        text-decoration: none;
+        transition: background-color 0.2s ease-out,
+        border-color 0.2s ease-out;
+      }
+      .ghost:hover,
+      .ghost:active {
+        background-color: rgba(199, 0, 0, 0.4);
+        color: #fff;
+        cursor: pointer;
+        border-color: rgba(220, 0, 0, 0.4);
+        transition: background-color 0.3s ease-in,
+        border-color 0.3s ease-in;
+      }
+      .ghost:after{
+        content:'SHOP';
+      }
+      .ghost:hover:after{
+        transition: 0.3s ease-in;
+        content:'THANKS FAM';
+      }
+
+      @media (max-width: 750px) {
+        .app-grid {
+          --app-grid-columns: 1;
+        }
+        #hero {
+          height: 100%;
+          width: 100vw;
+        }
+        .logo-hero {
+          height: 30vw;
+        }
+        .center-content {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        }
+        .cta {
+          font-size: 5vw;
+        }
+      }
     </style>
     <div id="hero">
-      Henlo
+      <div class="app-grid">
+        <div class="left-hero center-content"> <!-- Grid 1 -->
+          <img src="../../assets/logo_min.png" alt="Our lovely logo." class="logo-hero">
+          <div class="cta">
+                  <h1>Follow us!</h1>
+                  <h2><h2 class="at">@</h2>BarbarianSupply</h2>
+                </div>
+          <div class="grid-container">
+            <a href="https://www.facebook.com/barbariansupply/" target="_blank"><img src="assets/social-media/facebook.png" class="grid-item"></a>
+            <a href="https://twitter.com/barbariansupply" target="_blank"><img src="assets/social-media/twitter.png" class="grid-item"></a>
+            <a onclick="overlay()"><img id="snapchat" src="assets/social-media/snapchat.png" class="grid-item"></a>
+            <a href="https://www.youtube.com/channel/UCaZvi263wFgb0WJ_xH_kjRw" target="_blank"><img src="assets/social-media/youtube.png" class="grid-item"></a>
+            <a href="https://www.instagram.com/barbariansupply/" target="_blank"><img src="assets/social-media/instagram.png" class="grid-item"></a>
+          </div>
+        </div>
+        <div class="right-hero"> <!-- Grid 2 -->
+          <div class="center-content">
+            <div style="text-align:left;">
+              <h1 class="bold">barbarian(n) </h1>
+              <p class="def">
+                A warrior who uses brute force as a weapon.
+                <strong>Barbarians</strong> are known for their battle rages,
+                where they access a <strong><i>hidden stength</i></strong>.
+              </p>
+            </div>
+            <a href="https://shop.barbariansupply.com"><button class="ghost"></button></a>
+          </div>
+        </div>
+      </div>
     </div>
+
   </template>
 
   <script>
     /** @polymerElement */
     class HeroApp extends Polymer.Element {
-      static get is() { return 'hero-app'; }
+      static get is() {
+        return 'hero-app';
+      }
     }
 
     window.customElements.define(HeroApp.is, HeroApp);
