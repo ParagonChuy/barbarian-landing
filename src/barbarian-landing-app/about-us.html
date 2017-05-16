@@ -1,7 +1,8 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/app-grid/app-grid-style.html">
 <!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">-->
 <!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">-->
-
+<!-- bridging the gap from layman to strongman. -->
 <dom-module id="about-us">
   <template>
     <style>
@@ -14,18 +15,113 @@
         height: 100vh;
         width: 100vw;
       }
+      .about-content {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 1em;
+      }
       .about-header {
         font-family: 'Libre Baskerville', serif;
-        font-size: 10vmin;
+        font-size: 8vmin;
+        padding: 4vmin;
         text-align: center;
         margin: 0;
       }
-
+      .item {
+        background-color: #eeeeee;
+        box-shadow: 0px 6px 6px -6px #000;
+        color: white;
+        display: block;
+        font-family: 'Libre Baskerville', serif;
+        margin: 0 auto;
+        height: 45vh;
+        text-align: center;
+        width: 50vh;
+      }
+      .app-grid {
+        --app-grid-columns: 3;
+        --app-grid-item-height: 60vh;
+        --app-grid-item-width: 100vw;
+      }
+      hr {
+        background: #333333;
+        height: 2px;
+      }
+      .center-grid {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+      .center-text {
+        margin: auto;
+        width: 80vw;
+        padding: 4vmin;
+      }
+      #gerry {
+        background: url("../../assets/founders/gerardo.jpg") top -15px center;
+      }
+      #jorge {
+        background: url("../../assets/founders/jorge.jpg") center center;
+      }
+      #jesus {
+        background: url("../../assets/founders/jesus.jpg") center center;
+      }
+      @media (max-width: 750px) {
+        #about {
+          height: 215vh;
+          width: 100vw;
+        }
+        .app-grid {
+          --app-grid-columns: 1;
+        }
+        #item {
+          display: block;
+          margin: 0 auto;
+          width: 80vw;
+        }
+        .center-grid {
+          display: block;
+        }
+      }
     </style>
     <div id="about">
       <div class="center-content">
-        <h1 class="about-header">About Us</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos earum delectus esse repudiandae explicabo voluptatum quod rerum, aut ducimus beatae ratione dicta libero. Minima officiis quasi sapiente, deserunt cumque quas!</p>
+
+      <h1 class="about-header">About Us</h1>
+      <div class="center-text">
+        <hr/>
+        <h2 class="about-content">
+          <strong>Barbarian Supply Co.</strong> is a fitness brand founded by three Southern California raised
+          entrepreneurs. Our story begins as young children playing out in the soccer field, and
+          building a comraderie via athletics. As we grew older, we couldn't help but notice the
+          intimidating gap from unhealthy living to healthy living. This was the inception point of
+          our brand. The lifestyle can seem overwhelming at first glance, but we are here inform the uninformed.
+          We believe everyone is born a <i>barbarian</i>, and are merely taught to be civilized.
+          We are all <i>barbarians</i> at heart.
+          <br/>
+          <br/>
+          <i>Barbarians</i> didn't know they were <i>Barbarians</i>, they just were. That is one of our core values,
+          <i>unapolagetically do.</i>
+        </h2>
+        <hr/>
+      </div>
+      <div class="app-grid center-grid">
+        <div id="gerry" class="item">
+          <h1>Gerardo Alaniz</h2>
+          <h2>Designer</h2>
+        </div>
+
+        <div id="jorge" class="item">
+          <div></div>
+          <h1>Jorge Delgado</h2>
+          <h2>Social Media Marketer</h2>
+        </div>
+
+        <div id="jesus" class="item">
+          <h1>Jesus Vega</h2>
+          <h2>Developer</h2>
+        </div>
+       </div>
+
       </div>
     </div>
   </template>
