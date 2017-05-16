@@ -3,7 +3,8 @@
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0-rc.3",
-    "app-layout": "PolymerElements/app-layout#^1.0.1"
+    "app-layout": "PolymerElements/app-layout#^1.0.1",
+    "paper-dialog": "^2.0.0"
   },
   "devDependencies": {
     "web-component-tester": "^6.0.0-prerelease.5",

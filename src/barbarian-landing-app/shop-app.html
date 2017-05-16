@@ -10,12 +10,58 @@
       }
       #shop {
         background: #FFFFFF;
+        display: flex;
         height: 100vh;
+        margin: 0 auto;
+        text-align: center;
         width: 100vw;
+      }
+      .ghost {
+        display: inline-block;
+        font-size: 1em;
+        width: 60vw;
+        padding: 8px;
+        border: 2px solid #fff;
+        text-align: center;
+        outline: none;
+        text-decoration: none;
+        transition: background-color 0.2s ease-out,
+        border-color 0.2s ease-out;
+      }
+      .ghost:hover,
+      .ghost:active {
+        background-color: rgba(199, 0, 0, 0.4);
+        color: #fff;
+        cursor: pointer;
+        border-color: rgba(220, 0, 0, 0.4);
+        transition: background-color 0.3s ease-in,
+        border-color 0.3s ease-in;
+      }
+      .ghost:after{
+        content:'SHOP';
+      }
+      .ghost:hover:after{
+        transition: 0.3s ease-in;
+        content:'WE LOVE YOU!';
+      }
+      .center-content {
+        align-items: center;
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .shop-cta {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 5vh;
+        text-align: center;
       }
     </style>
     <div id="shop">
-      Shop
+      <div class="center-content">
+        <h1 class="shop-cta">Visit our shop!</h1>
+        <a href="https://shop.barbariansupply.com"><button class="ghost"></button></a>
+      </div>
     </div>
   </template>
 

@@ -1,4 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
 <!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">-->
 <!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">-->
 
@@ -8,15 +9,95 @@
       :host {
         display: block;
       }
+      input[type="message"],
+      input[type="text"], input[type="email"] {
+        font-family: 'Roboto', sans-serif;
+        width: 60vw;
+        padding: 10px;
+        border: none;
+        border-bottom: solid 2px #c9c9c9;
+        transition: border 0.3s;
+      }
+      input[type="email"].focus,
+      input[type="message"].focus,
+      input[type="text"].focus {
+        border-bottom: solid 2px #969696;
+      }
       #contact {
         background: #DCDCDC;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
         height: 100vh;
         width: 100vw;
       }
+      input[type="message"]{
+        height: 10vh;
+      }
+      .logo-contact {
+        display: block;
+        height: 20vw;
+        max-height: 25vw;
+        margin: 0 auto;
+      }
+      .center-content {
+        height: 100vh;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      form {
+        height: 60vh;
+        width: 60vw;
+        text-align: center;
+      }
+      .ghost {
+        display: inline-block;
+        font-size: 1em;
+        width: 35vw;
+        padding: 8px;
+        border: 2px solid #fff;
+        text-align: center;
+        outline: none;
+        text-decoration: none;
+        transition: background-color 0.2s ease-out,
+        border-color 0.2s ease-out;
+      }
+      .ghost:hover,
+      .ghost:active {
+        background-color: rgba(199, 0, 0, 0.4);
+        color: #fff;
+        cursor: pointer;
+        border-color: rgba(220, 0, 0, 0.4);
+        transition: background-color 0.3s ease-in,
+        border-color 0.3s ease-in;
+      }
+      .ghost:after{
+        content:'Submit';
+      }
+      .ghost:hover:after{
+        transition: 0.3s ease-in;
+        content:'WE APPRECIATE YOU';
+      }
+      @media (max-width: 750px) {
+        .logo-contact {
+          padding: 10vh;
+          height: 30vw;
+        }
+      }
     </style>
     <div id="contact">
-      Contact
-    </div>
+        <div class="center-content">
+          <img class="logo-contact" src="../../assets/logo_min.png" alt="Barbarian Supply Co.">
+          <form action="https://formspree.io/support@barbariansupply.com" method="POST">
+            <input placeholder="Name" type="text" name="name"><br>
+            <input placeholder="Email" type="email" name="_replyto"><br>
+            <input type="message" name="message" placeholder="Message">
+            <input class="ghost" type="submit">
+          </form>
+        </div>
+      </div>
+
   </template>
 
   <script>

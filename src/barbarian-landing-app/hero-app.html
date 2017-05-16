@@ -1,5 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/app-layout/app-grid/app-grid-style.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,7s00" rel="stylesheet">
 
 <!--<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">-->
@@ -105,7 +107,27 @@
         transition: 0.3s ease-in;
         content:'THANKS FAM';
       }
+      .snap-code {
+        width: 15vw;
+      }
 
+      #overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+      }
+
+      #overlay div {
+        align-items: center;
+      }
+      #mc_embed_signup form {
+        background: rgba(0,0,0,0.5);
+        color: white;
+        font-family: 'Libre Baskerville', serif;
+        margin: 0 auto;
+        width: 100%;
+      }
       @media (max-width: 750px) {
         .app-grid {
           --app-grid-columns: 1;
@@ -127,14 +149,15 @@
         }
       }
     </style>
+
     <div id="hero">
       <div class="app-grid">
         <div class="left-hero center-content"> <!-- Grid 1 -->
           <img src="../../assets/logo_min.png" alt="Our lovely logo." class="logo-hero">
           <div class="cta">
-                  <h1>Follow us!</h1>
-                  <h2><h2 class="at">@</h2>BarbarianSupply</h2>
-                </div>
+            <h1>Follow us!</h1>
+            <h2><h2 class="at">@</h2>BarbarianSupply</h2>
+          </div>
           <div class="grid-container">
             <a href="https://www.facebook.com/barbariansupply/" target="_blank"><img src="assets/social-media/facebook.png" class="grid-item"></a>
             <a href="https://twitter.com/barbariansupply" target="_blank"><img src="assets/social-media/twitter.png" class="grid-item"></a>
@@ -142,6 +165,7 @@
             <a href="https://www.youtube.com/channel/UCaZvi263wFgb0WJ_xH_kjRw" target="_blank"><img src="assets/social-media/youtube.png" class="grid-item"></a>
             <a href="https://www.instagram.com/barbariansupply/" target="_blank"><img src="assets/social-media/instagram.png" class="grid-item"></a>
           </div>
+
         </div>
         <div class="right-hero"> <!-- Grid 2 -->
           <div class="center-content">
@@ -163,6 +187,9 @@
 
   <script>
     /** @polymerElement */
+    function overlay() {
+      alert("Add @barbariansupply on Snapchat")
+    }
     class HeroApp extends Polymer.Element {
       static get is() {
         return 'hero-app';
