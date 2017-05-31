@@ -1,6 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../../bower_components/app-layout/app-grid/app-grid-style.html">
 <link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/app-layout/app-grid/app-grid-style.html">
 
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,7s00" rel="stylesheet">
 
@@ -16,7 +16,7 @@
       .app-grid {
         --app-grid-columns: 2;
         --app-grid-item-height: 100vh;
-        --app-grid-item-width: 50vw;
+        --app-grid-item-width: 100vw;
       }
       .logo-hero {
         display: block;
@@ -30,7 +30,6 @@
       }
       #hero {
         color: white;
-        height: 100vh;
         width: 100vw;
       }
       .cta {
@@ -107,33 +106,38 @@
         transition: 0.3s ease-in;
         content:'THANKS FAM';
       }
+      .ghost-2 {
+        display: inline-block;
+        font-size: 1em;
+        width: 30vw;
+        padding: 8px;
+        border: 2px solid #fff;
+        text-align: center;
+        outline: none;
+        text-decoration: none;
+        transition: background-color 0.2s ease-out,
+        border-color 0.2s ease-out;
+      }
+      .ghost-2:hover,
+      .ghost-2:active {
+        background-color: rgba(199, 0, 0, 0.4);
+        color: #fff;
+        cursor: pointer;
+        border-color: rgba(220, 0, 0, 0.4);
+        transition: background-color 0.3s ease-in,
+        border-color 0.3s ease-in;
+      }
       .snap-code {
         width: 15vw;
       }
 
-      #overlay {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        visibility: hidden;
-      }
-
-      #overlay div {
-        align-items: center;
-      }
-      #mc_embed_signup form {
-        background: rgba(0,0,0,0.5);
-        color: white;
-        font-family: 'Libre Baskerville', serif;
-        margin: 0 auto;
-        width: 100%;
-      }
       @media (max-width: 750px) {
         .app-grid {
           --app-grid-columns: 1;
         }
         #hero {
-          height: 100%;
+          display: block;
+          height: auto;
           width: 100vw;
         }
         .logo-hero {
@@ -165,21 +169,18 @@
             <a href="https://www.youtube.com/channel/UCaZvi263wFgb0WJ_xH_kjRw" target="_blank"><img src="assets/social-media/youtube.png" class="grid-item"></a>
             <a href="https://www.instagram.com/barbariansupply/" target="_blank"><img src="assets/social-media/instagram.png" class="grid-item"></a>
           </div>
-
+          <a href="http://eepurl.com/cMwRnv" target="_blank"><button class="ghost-2">Join the family!</button></a>
         </div>
-        <div class="right-hero"> <!-- Grid 2 -->
-          <div class="center-content">
+        <div class="right-hero center-content"> <!-- Grid 2 -->
             <div style="text-align:left;">
               <h1 class="bold">barbarian(n) </h1>
               <p class="def">
                 A warrior who uses brute force as a weapon.
                 <strong>Barbarians</strong> are known for their battle rages,
-                where they access a <strong><i>hidden stength</i></strong>.
+                where they access a <strong><i>hidden strength</i></strong>.
               </p>
             </div>
             <a href="https://shop.barbariansupply.com"><button class="ghost"></button></a>
-          </div>
-        </div>
       </div>
     </div>
 
